@@ -210,4 +210,4 @@ app.get('/oauth2callback', async (req, res) => {
   res.redirect(`/playlists?credentials=${encodeURIComponent(JSON.stringify(credentials))}`)
 })
 
-app.listen(8080, () => console.log('Example app listening on port 8080!'))
+app.listen(process.env.PORT, () => console.log(`YouTube Shuffler listening on port ${process.env.PORT}!`))
