@@ -28,7 +28,7 @@ app.get('/', async (req, res) => {
     </p>
     <p>
       Ready?
-      <a href="/authorize">Log in with YouTube</a>
+      <a class="btn" href="/authorize">Log in with YouTube</a>
     </p>
     <p>
       This was created by
@@ -57,7 +57,7 @@ app.get('/playlists', async (req, res) => {
       </p>
       <p>
         Care to try again?
-        <a href="/authorize">Log in with YouTube</a>
+        <a class="btn" href="/authorize">Log in with YouTube</a>
       </p>
     `}))
   }
@@ -78,7 +78,7 @@ app.get('/playlists', async (req, res) => {
       </p>
       <p>
         Care to try again?
-        <a href="/authorize">Log in with YouTube</a>
+        <a class="btn" href="/authorize">Log in with YouTube</a>
       </p>
     `}))
   }
@@ -90,7 +90,7 @@ app.get('/playlists', async (req, res) => {
       </p>
       <p>
         Care to try again?
-        <a href="/authorize">Log in with YouTube</a>
+        <a class="btn" href="/authorize">Log in with YouTube</a>
       </p>
     `}))
   }
@@ -105,6 +105,7 @@ app.get('/playlists', async (req, res) => {
     ${playlists.map((playlist) => (`
       <p>
         <a
+          class="btn"
           href="/playlists/${playlist.id}/shuffle?credentials=${encodeURIComponent(JSON.stringify(credentials))}&title=${encodeURIComponent(playlist.snippet.title)}"
         >
           ${playlist.snippet.title}
@@ -133,7 +134,7 @@ app.get('/playlists/:playlistId/shuffle', async (req, res) => {
       </p>
       <p>
         Care to try again?
-        <a href="/authorize">Log in with YouTube</a>
+        <a class="btn" href="/authorize">Log in with YouTube</a>
       </p>
     `}))
   }
@@ -162,7 +163,7 @@ app.get('/playlists/:playlistId/shuffle', async (req, res) => {
       </p>
       <p>
         Care to try again?
-        <a href="/playlists?credentials=${encodeURIComponent(JSON.stringify(credentials))}">
+        <a class="btn" href="/playlists?credentials=${encodeURIComponent(JSON.stringify(credentials))}">
           Choose a playlist
         </a>
       </p>
@@ -177,7 +178,7 @@ app.get('/playlists/:playlistId/shuffle', async (req, res) => {
       is ready to enjoy.
     </p>
     <p>
-      <a href="https://www.youtube.com/playlist?list=${newPlaylist.id}">
+      <a class="btn" href="https://www.youtube.com/playlist?list=${newPlaylist.id}">
         Enjoy it now
       </a>
     </p>
@@ -202,7 +203,7 @@ app.get('/oauth2callback', async (req, res) => {
       <p>Couldn’t get credentials from code: ${e.message}</p>
       <p>
         Care to try again?
-        <a href="/authorize">Log in with YouTube</a>
+        <a class="btn" href="/authorize">Log in with YouTube</a>
       </p>
     `}))
   }
